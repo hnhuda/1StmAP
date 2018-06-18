@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Camp_Outline_0.js"></script>
+        <script src="data/Service_1.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[21.164437652008317,92.10664907145694],[21.224357893024106,92.19757181652243]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        L.control.locate().addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_Camp_Outline_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['New_Camp_N'] !== null ? Autolinker.link(String(feature.properties['New_Camp_N'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['District'] !== null ? Autolinker.link(String(feature.properties['District'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Upazila'] !== null ? Autolinker.link(String(feature.properties['Upazila'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Settlement'] !== null ? Autolinker.link(String(feature.properties['Settlement'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Union'] !== null ? Autolinker.link(String(feature.properties['Union'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Name_Alias'] !== null ? Autolinker.link(String(feature.properties['Name_Alias'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SSID'] !== null ? Autolinker.link(String(feature.properties['SSID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DEV_Prog'] !== null ? Autolinker.link(String(feature.properties['DEV_Prog'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Level'] !== null ? Autolinker.link(String(feature.properties['Level'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Rev_Camp'] !== null ? Autolinker.link(String(feature.properties['Rev_Camp'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Camp_Outline_0_0(feature) {
+            switch(String(feature.properties['DEV_Prog'])) {
+                default:
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,246,248,1.0)',
+            }
+                    break;
+                case '0':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,235,241,1.0)',
+            }
+                    break;
+                case '19.43':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(198,223,235,1.0)',
+            }
+                    break;
+                case '31.7':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(173,211,229,1.0)',
+            }
+                    break;
+                case '41.65':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(149,198,223,1.0)',
+            }
+                    break;
+                case '44.12':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(123,190,226,1.0)',
+            }
+                    break;
+                case '48.25':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(98,183,229,1.0)',
+            }
+                    break;
+                case '56.34':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,175,233,1.0)',
+            }
+                    break;
+                case '57.06':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(47,168,237,1.0)',
+            }
+                    break;
+                case '62.76':
+                    return {
+                pane: 'pane_Camp_Outline_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(21,160,240,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Camp_Outline_0');
+        map.getPane('pane_Camp_Outline_0').style.zIndex = 400;
+        map.getPane('pane_Camp_Outline_0').style['mix-blend-mode'] = 'normal';
+        var layer_Camp_Outline_0 = new L.geoJson(json_Camp_Outline_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Camp_Outline_0',
+            onEachFeature: pop_Camp_Outline_0,
+            style: style_Camp_Outline_0_0,
+        });
+        bounds_group.addLayer(layer_Camp_Outline_0);
+        map.addLayer(layer_Camp_Outline_0);
+        function pop_Service_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Join_Count'] !== null ? Autolinker.link(String(feature.properties['Join_Count'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TARGET_FID'] !== null ? Autolinker.link(String(feature.properties['TARGET_FID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Join_Cou_1'] !== null ? Autolinker.link(String(feature.properties['Join_Cou_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TARGET_F_1'] !== null ? Autolinker.link(String(feature.properties['TARGET_F_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['New_Camp_N'] !== null ? Autolinker.link(String(feature.properties['New_Camp_N'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Camp_Facil'] !== null ? Autolinker.link(String(feature.properties['Camp_Facil'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['District'] !== null ? Autolinker.link(String(feature.properties['District'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Upazila'] !== null ? Autolinker.link(String(feature.properties['Upazila'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Union'] !== null ? Autolinker.link(String(feature.properties['Union'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Settlement'] !== null ? Autolinker.link(String(feature.properties['Settlement'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Camp_Name'] !== null ? Autolinker.link(String(feature.properties['Camp_Name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ISCG_Camp'] !== null ? Autolinker.link(String(feature.properties['ISCG_Camp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Unique_ID'] !== null ? Autolinker.link(String(feature.properties['Unique_ID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Facility_C'] !== null ? Autolinker.link(String(feature.properties['Facility_C'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Facility'] !== null ? Autolinker.link(String(feature.properties['Facility'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Latitude'] !== null ? Autolinker.link(String(feature.properties['Latitude'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longitude'] !== null ? Autolinker.link(String(feature.properties['Longitude'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID_1'] !== null ? Autolinker.link(String(feature.properties['OBJECTID_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TARGET_F_2'] !== null ? Autolinker.link(String(feature.properties['TARGET_F_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['uuid'] !== null ? Autolinker.link(String(feature.properties['uuid'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['uuid_updat'] !== null ? Autolinker.link(String(feature.properties['uuid_updat'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['uuid_'] !== null ? Autolinker.link(String(feature.properties['uuid_'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SCHOOL_NAM'] !== null ? Autolinker.link(String(feature.properties['SCHOOL_NAM'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SCHOOL_COD'] !== null ? Autolinker.link(String(feature.properties['SCHOOL_COD'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SITE_CONST'] !== null ? Autolinker.link(String(feature.properties['SITE_CONST'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['REMARKS'] !== null ? Autolinker.link(String(feature.properties['REMARKS'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IMP_PART_D'] !== null ? Autolinker.link(String(feature.properties['IMP_PART_D'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GPS_POINT_'] !== null ? Autolinker.link(String(feature.properties['GPS_POINT_'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Facility_P'] !== null ? Autolinker.link(String(feature.properties['Facility_P'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['field_31'] !== null ? Autolinker.link(String(feature.properties['field_31'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Road_Acces'] !== null ? Autolinker.link(String(feature.properties['Road_Acces'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Main_Path_'] !== null ? Autolinker.link(String(feature.properties['Main_Path_'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Main_Pat_1'] !== null ? Autolinker.link(String(feature.properties['Main_Pat_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Either_Veh'] !== null ? Autolinker.link(String(feature.properties['Either_Veh'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DC_Acces_I'] !== null ? Autolinker.link(String(feature.properties['DC_Acces_I'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Distributi'] !== null ? Autolinker.link(String(feature.properties['Distributi'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Camp_ID'] !== null ? Autolinker.link(String(feature.properties['Camp_ID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CiC_Camp'] !== null ? Autolinker.link(String(feature.properties['CiC_Camp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['New_Camp_S'] !== null ? Autolinker.link(String(feature.properties['New_Camp_S'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Join_Cou_2'] !== null ? Autolinker.link(String(feature.properties['Join_Cou_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TARGET_F_3'] !== null ? Autolinker.link(String(feature.properties['TARGET_F_3'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Latrine_pr'] !== null ? Autolinker.link(String(feature.properties['Latrine_pr'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Latrine_Co'] !== null ? Autolinker.link(String(feature.properties['Latrine_Co'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['match'] !== null ? Autolinker.link(String(feature.properties['match'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TARGET_F_4'] !== null ? Autolinker.link(String(feature.properties['TARGET_F_4'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Water_prox'] !== null ? Autolinker.link(String(feature.properties['Water_prox'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Water_coun'] !== null ? Autolinker.link(String(feature.properties['Water_coun'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Latrine__1'] !== null ? Autolinker.link(String(feature.properties['Latrine__1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Photo'] !== null ? Autolinker.link(String(feature.properties['Photo'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['File Path'] !== null ? Autolinker.link(String(feature.properties['File Path'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Media'] !== null ? Autolinker.link(String(feature.properties['Media'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Folder Pat'] !== null ? Autolinker.link(String(feature.properties['Folder Pat'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['G_\ROUND 4'] !== null ? Autolinker.link(String(feature.properties['G_\ROUND 4'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Service_1_0() {
+            return {
+                pane: 'pane_Service_1',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(53,163,152,1.0)',
+            }
+        }
+        map.createPane('pane_Service_1');
+        map.getPane('pane_Service_1').style.zIndex = 401;
+        map.getPane('pane_Service_1').style['mix-blend-mode'] = 'normal';
+        var layer_Service_1 = new L.geoJson(json_Service_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Service_1',
+            onEachFeature: pop_Service_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Service_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Service_1);
+        map.addLayer(layer_Service_1);
+        setBounds();
+        var i = 0;
+        layer_Camp_Outline_0.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['New_Camp_N'] !== null?String('<div style="color: #5e5e5e; font-size: 7pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['New_Camp_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Camp_Outline_0'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_CampOutline_0]);
+        map.on("zoomend", function(){
+            resetLabels([layer_CampOutline_0]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_CampOutline_0]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_CampOutline_0]);
+        });
+        </script>
+    </body>
+</html>
